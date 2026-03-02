@@ -113,22 +113,33 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <span class="card-title">portfolio.py</span>
+                        <span class="card-title"><i class="fab fa-java" style="margin-right:6px"></i>IngenieurDonnees.java</span>
+                        <div class="card-header-actions">
+                            <span class="card-action" title="Copier"><i class="fas fa-copy"></i></span>
+                        </div>
                     </div>
                     <div class="card-body">
-                        <pre><code><span class="code-keyword">class</span> <span class="code-class">IngenieurDonnees</span>:
-    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(<span class="code-param">self</span>):
-        <span class="code-param">self</span>.nom = <span class="code-string">"Mohamed TAMZIRT"</span>
-        <span class="code-param">self</span>.role = <span class="code-string">"Étudiant Ingénieur Données"</span>
-        <span class="code-param">self</span>.ecole = <span class="code-string">"ENSA Al Hoceima"</span>
-        <span class="code-param">self</span>.competences = [
-            <span class="code-string">"Python"</span>, <span class="code-string">"Spark"</span>,
-            <span class="code-string">"Kafka"</span>, <span class="code-string">"ML"</span>,
-            <span class="code-string">"Deep Learning"</span>
-        ]
+                        <div class="code-lines">
+                            <pre><code><span class="code-annotation">@Component</span>
+<span class="code-keyword">public class</span> <span class="code-class">IngenieurDonnees</span> {
 
-    <span class="code-keyword">def</span> <span class="code-func">passion</span>(<span class="code-param">self</span>):
-        <span class="code-keyword">return</span> <span class="code-string">"Construire des pipelines<br>         qui génèrent des insights"</span></code></pre>
+    <span class="code-keyword">private</span> <span class="code-type">String</span> nom = <span class="code-string">"Mohamed TAMZIRT"</span>;
+    <span class="code-keyword">private</span> <span class="code-type">String</span> role = <span class="code-string">"Ingénieur Données"</span>;
+    <span class="code-keyword">private</span> <span class="code-type">String</span> ecole = <span class="code-string">"ENSA Al Hoceima"</span>;
+    <span class="code-keyword">private</span> <span class="code-type">List</span>&lt;<span class="code-type">String</span>&gt; competences = <span class="code-type">List</span>.of(
+        <span class="code-string">"Spark"</span>, <span class="code-string">"Kafka"</span>,
+        <span class="code-string">"ML"</span>, <span class="code-string">"Deep Learning"</span>
+    );
+
+    <span class="code-keyword">public</span> <span class="code-type">String</span> <span class="code-func">getPassion</span>() {
+        <span class="code-keyword">return</span> <span class="code-string">"Construire des pipelines\n"</span>
+             + <span class="code-string">"qui génèrent des insights"</span>;
+    }
+}</code></pre>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-dot"></span> Build Réussi
+                        </div>
                     </div>
                 </div>
             </div>

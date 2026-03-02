@@ -257,6 +257,17 @@ contactForm.addEventListener('submit', (e) => {
     const btn = contactForm.querySelector('.btn-submit');
     const originalContent = btn.innerHTML;
 
+    const name = contactForm.querySelector('#name').value;
+    const email = contactForm.querySelector('#email').value;
+    const subject = contactForm.querySelector('#subject').value;
+    const message = contactForm.querySelector('#message').value;
+
+    const mailtoLink = `mailto:mohamedtamzirtai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${message}`)}`;
+
+    // Ouvrir le client mail
+    window.location.href = mailtoLink;
+
+    // Retour visuel
     btn.innerHTML = '<span>Envoi en cours...</span><i class="fas fa-spinner fa-spin"></i>';
     btn.disabled = true;
 

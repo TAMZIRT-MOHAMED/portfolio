@@ -156,7 +156,7 @@ input,textarea{font-family:inherit}
 
 /* ===== CERTIFICATIONS ===== */
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.cert-card{background:var(--surface);border:1px solid var(--glass-border);border-radius:var(--radius);padding:24px;display:flex;align-items:flex-start;gap:16px;transition:var(--transition)}
+.cert-card{background:var(--surface);border:1px solid var(--glass-border);border-radius:var(--radius);padding:24px;display:flex;align-items:flex-start;gap:16px;transition:var(--transition);text-decoration:none;color:inherit;cursor:pointer}
 .cert-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 30px rgba(99,102,241,.1)}
 .cert-icon{width:44px;height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);font-size:1.1rem;color:#fff}
 .cert-icon.oracle{background:linear-gradient(135deg,#EF4444,#F97316)}

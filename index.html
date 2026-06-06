@@ -162,9 +162,15 @@
                 <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
                 <p class="section-subtitle">A selection of projects showcasing my data engineering and AI expertise</p>
             </div>
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="data">Data & ML</button>
+                <button class="filter-btn" data-filter="ai">AI & NLP</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+            </div>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-aos="fade-up">
+                <!-- Featured: Job Intelligent -->
+                <div class="project-card" data-category="ai" data-aos="fade-up">
                     <div class="project-header">
                         <div class="project-icon"><i class="fas fa-briefcase"></i></div>
                         <div class="project-links">
@@ -183,8 +189,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <!-- Featured: TaaSim -->
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-header">
                         <div class="project-icon"><i class="fas fa-taxi"></i></div>
                         <div class="project-links">
@@ -202,8 +208,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <!-- Featured: NLP Annotation Platform -->
+                <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-header">
                         <div class="project-icon"><i class="fas fa-comments"></i></div>
                         <div class="project-links">
@@ -218,6 +224,150 @@
                         <div class="project-tech">
                             <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">MariaDB</span>
                             <span class="tag">Hugging Face</span><span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- IT-Pulse RAG Chatbot -->
+                <div class="project-card" data-category="ai" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>IT-Pulse RAG Chatbot</h3>
+                        <span class="project-date">Personal Project</span>
+                        <p>A real-time streaming chatbot leveraging LLMs and RAG (Retrieval-Augmented Generation) for intelligent knowledge retrieval, built as a pair project with streaming capabilities.</p>
+                        <div class="project-tech">
+                            <span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">ChromaDB</span>
+                            <span class="tag">Python</span><span class="tag">Streaming</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- AI Language Learning Agent -->
+                <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-brain"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>AI Language Learning Agent</h3>
+                        <span class="project-date">Personal Project</span>
+                        <p>An intelligent AI agent on n8n for language learning recommendation, featuring a smart workflow that suggests tailored learning resources based on user profiles.</p>
+                        <div class="project-tech">
+                            <span class="tag">n8n</span><span class="tag">AI Agents</span><span class="tag">LLMs</span>
+                            <span class="tag">Workflow</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Big Data Procurement Pipeline -->
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-database"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Big Data Procurement Pipeline</h3>
+                        <span class="project-date">Academic Project</span>
+                        <p>Created a comprehensive big data pipeline for a procurement system as part of a data engineering project, handling large-scale data processing and analytics.</p>
+                        <div class="project-tech">
+                            <span class="tag">Big Data</span><span class="tag">Apache Spark</span>
+                            <span class="tag">Pipeline</span><span class="tag">ETL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kaggle Predictive ML Model -->
+                <div class="project-card" data-category="data" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Kaggle Predictive ML Model</h3>
+                        <span class="project-date">Academic Project</span>
+                        <p>Built a predictive machine learning model using large-scale datasets from Kaggle, applying advanced ML techniques for accurate predictions.</p>
+                        <div class="project-tech">
+                            <span class="tag">Python</span><span class="tag">Scikit-learn</span>
+                            <span class="tag">Pandas</span><span class="tag">Kaggle</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- eBay ETL Pipeline -->
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>eBay ETL Pipeline</h3>
+                        <span class="project-date">Personal Project</span>
+                        <p>An end-to-end ETL (Extract, Transform, Load) pipeline for processing eBay data, enabling automated data collection and transformation workflows.</p>
+                        <div class="project-tech">
+                            <span class="tag">ETL</span><span class="tag">Python</span>
+                            <span class="tag">Airflow</span><span class="tag">Data Pipeline</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Distributed University Platform -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-university"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Distributed University Platform</h3>
+                        <span class="project-date">Academic Project</span>
+                        <p>Designed and developed a distributed university management platform powered by MongoDB, enabling efficient academic resource management at scale.</p>
+                        <div class="project-tech">
+                            <span class="tag">MongoDB</span><span class="tag">Distributed Systems</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maintenance & Inventory Manager -->
+                <div class="project-card" data-category="web" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-tools"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Maintenance & Inventory Manager</h3>
+                        <span class="project-date">Personal Project</span>
+                        <p>A full-featured web application for maintenance management and inventory tracking, providing streamlined workflows for industrial operations.</p>
+                        <div class="project-tech">
+                            <span class="tag">Web App</span><span class="tag">Full-Stack</span>
+                            <span class="tag">Database</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Medical Statistics App -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Medical Statistics App</h3>
+                        <span class="project-date">Academic Project</span>
+                        <p>A disease-management and medical-statistics application built with Python (Tkinter) and PHP, providing healthcare data analysis and visualization.</p>
+                        <div class="project-tech">
+                            <span class="tag">Python</span><span class="tag">Tkinter</span>
+                            <span class="tag">PHP</span><span class="tag">Statistics</span>
                         </div>
                     </div>
                 </div>
@@ -265,38 +415,62 @@
                 <p class="section-subtitle">Industry-recognized credentials validating my expertise</p>
             </div>
             <div class="certs-grid">
-                <div class="cert-card" data-aos="fade-up">
+                <a href="https://drive.google.com/file/d/1CGGTqoqXj1F8O39edb3onG6hg3YP6KNx/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up">
                     <div class="cert-icon oracle"><i class="fab fa-java"></i></div>
                     <div>
                         <h4>Oracle Certified Professional</h4>
                         <p>Java SE 17 Developer</p>
                     </div>
                     <span class="cert-badge oracle-badge">Oracle</span>
-                </div>
-                <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                </a>
+                <a href="https://drive.google.com/file/d/1stS4GRs84HFAEQY1kaWJyJ35jlaTkKij/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="cert-icon oracle"><i class="fas fa-cloud"></i></div>
                     <div>
                         <h4>Oracle Cloud Infrastructure 2025</h4>
                         <p>AI Foundations Associate</p>
                     </div>
                     <span class="cert-badge oracle-badge">Oracle</span>
-                </div>
-                <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                </a>
+                <a href="https://drive.google.com/file/d/1PdFHPXb_T2CAzg-YWgSYkAFNkpCNrnF3/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-icon oracle"><i class="fas fa-database"></i></div>
+                    <div>
+                        <h4>Oracle Cloud Database Services 2025</h4>
+                        <p>Certified Professional</p>
+                    </div>
+                    <span class="cert-badge oracle-badge">Oracle</span>
+                </a>
+                <a href="https://drive.google.com/file/d/1dElbCR_uU12A4Gj_L9KdA6L_ccowCVj9/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="cert-icon ds"><i class="fas fa-brain"></i></div>
                     <div>
                         <h4>Deep Learning with TensorFlow 2</h4>
                         <p>365 Data Science</p>
                     </div>
                     <span class="cert-badge ds-badge">365DS</span>
-                </div>
-                <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+                </a>
+                <a href="https://drive.google.com/file/d/1RnSurAeuOvQt9iImlNlsQ7aRvfdRNBeK/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="cert-icon ds"><i class="fas fa-robot"></i></div>
                     <div>
                         <h4>LLM Engineering with Streamlit & OpenAI</h4>
                         <p>365 Data Science</p>
                     </div>
                     <span class="cert-badge ds-badge">365DS</span>
-                </div>
+                </a>
+                <a href="https://drive.google.com/file/d/1l4Shtyq9VsF50gwkErItARg3JD3x7Bkn/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cert-icon ds"><i class="fas fa-chart-line"></i></div>
+                    <div>
+                        <h4>Machine Learning in Python</h4>
+                        <p>365 Data Science</p>
+                    </div>
+                    <span class="cert-badge ds-badge">365DS</span>
+                </a>
+                <a href="https://drive.google.com/file/d/1g33IVDXafWS63xaFBP-m7CD2sUX31m4h/view?usp=sharing" target="_blank" rel="noopener" class="cert-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="cert-icon ds"><i class="fas fa-database"></i></div>
+                    <div>
+                        <h4>SQL and Databases</h4>
+                        <p>365 Data Science</p>
+                    </div>
+                    <span class="cert-badge ds-badge">365DS</span>
+                </a>
             </div>
         </div>
     </section>

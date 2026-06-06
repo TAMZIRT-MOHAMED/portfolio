@@ -111,6 +111,29 @@ function runTypewriter() {
 }
 runTypewriter();
 
+// ===== Project Filters =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        projectCards.forEach((card, i) => {
+            const show = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('hidden', !show);
+            if (show) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(12px)';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, i * 40);
+            }
+        });
+    });
+});
+
 // ===== Stat Counters =====
 function animateCounters() {
     if (countersStarted) return;

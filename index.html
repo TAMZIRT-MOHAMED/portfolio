@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed TAMZIRT | Data Engineering Student</title>
-    <meta name="description" content="Portfolio of Mohamed TAMZIRT - Data Engineering Student specializing in Machine Learning, Big Data, and Software Development.">
+    <title>TAMZIRT Mohamed | Data Engineer & AI Developer</title>
+    <meta name="description" content="Portfolio of TAMZIRT Mohamed — Final-year Data Engineering and AI student specializing in scalable pipelines, machine learning, and cloud-native solutions.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,328 +12,243 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- ==================== LOADER ==================== -->
+    <!-- LOADER -->
     <div id="loader" class="loader">
-        <div class="loader-content">
+        <div>
             <div class="loader-spinner"></div>
-            <p class="loader-text">Loading<span class="dots">...</span></p>
+            <p class="loader-text">Loading...</p>
         </div>
     </div>
 
-    <!-- ==================== CURSOR ==================== -->
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-
-    <!-- ==================== NAVIGATION ==================== -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+            <a href="#hero" class="nav-logo">TAMZIRT<span>.</span></a>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
-                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
-                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
-                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
-                <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
-                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="fr.html" class="lang-switch" title="Version française">
-                    <i class="fas fa-globe"></i> FR
-                </a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
                 <a href="#contact" class="nav-cta">Let's Talk</a>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- ==================== HERO ==================== -->
+    <!-- HERO -->
     <section id="hero" class="hero">
-        <div class="hero-bg-effects">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-            <div class="grid-overlay"></div>
+        <div class="hero-bg">
+            <canvas id="particles-canvas"></canvas>
+            <div class="hero-glow g1"></div>
+            <div class="hero-glow g2"></div>
         </div>
-        <div class="hero-container">
+        <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-badge" data-aos="fade-down">
                     <span class="badge-dot"></span>
-                    Available for Internships & Opportunities
+                    Available for Opportunities
                 </div>
                 <h1 class="hero-title" data-aos="fade-up">
-                    <span class="title-line">Hi, I'm</span>
-                    <span class="title-name">Mohamed <span class="text-gradient">TAMZIRT</span></span>
+                    <span class="line1">Hello, I'm</span>
+                    <span class="name text-gradient">TAMZIRT Mohamed</span>
                 </h1>
-                <div class="hero-typewriter" data-aos="fade-up" data-aos-delay="200">
-                    <span class="typewriter-prefix">I'm a </span>
-                    <span class="typewriter-text" id="typewriter"></span>
-                    <span class="typewriter-cursor">|</span>
+                <div class="hero-subtitle" data-aos="fade-up">
+                    <span class="typed-text" id="typewriter"></span><span class="cursor-blink">|</span>
                 </div>
-                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
-                    Data Engineering student passionate about building scalable data-driven innovations 
-                    through machine learning, big data technologies, and modern software development practices.
+                <p class="hero-desc" data-aos="fade-up">
+                    Final-year Data Engineering and AI student specializing in scalable pipelines, 
+                    machine learning, and cloud-native solutions.
                 </p>
-                <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+                <div class="hero-actions" data-aos="fade-up">
                     <a href="#projects" class="btn btn-primary">
-                        <span>View My Work</span>
+                        <span>View Projects</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <span>Get In Touch</span>
+                    <a href="assets/Mohamed_TAMZIRT_Resume.pdf" class="btn btn-outline" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
                     </a>
                 </div>
-                <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
-                    <a href="https://github.com/TAMZIRT-MOHAMED" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mohamed-tamzirt-740953252/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:mohamedtamzirtai@gmail.com" class="social-link" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <div class="hero-socials" data-aos="fade-up">
+                    <a href="https://www.linkedin.com/in/mohamed-tamzirt-740953252/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/TAMZIRT-MOHAMED" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:mohamedtamzirtai@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
-                <div class="hero-card">
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="hero-card" id="hero-card">
                     <div class="card-header">
-                        <div class="card-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <span class="card-title"><i class="fab fa-java" style="margin-right:6px"></i>DataEngineer.java</span>
-                        <div class="card-header-actions">
-                            <span class="card-action" title="Copy"><i class="fas fa-copy"></i></span>
-                        </div>
+                        <div class="card-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <span class="card-title"><i class="fab fa-python" style="margin-right:6px"></i>pipeline.py</span>
+                        <span class="card-action" title="Copy"><i class="fas fa-copy"></i></span>
                     </div>
                     <div class="card-body">
-                        <div class="code-lines">
-                            <pre><code><span class="code-annotation">@Component</span>
-<span class="code-keyword">public class</span> <span class="code-class">DataEngineer</span> {
+                        <div class="code-lines"><pre><code><span class="code-keyword">class</span> <span class="code-class">DataPipeline</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):
+        self.name = <span class="code-string">"TAMZIRT Mohamed"</span>
+        self.role = <span class="code-string">"Data Engineer &amp; AI Dev"</span>
+        self.stack = [
+            <span class="code-string">"Spark"</span>, <span class="code-string">"Kafka"</span>,
+            <span class="code-string">"Airflow"</span>, <span class="code-string">"BERT"</span>
+        ]
 
-    <span class="code-keyword">private</span> <span class="code-type">String</span> name = <span class="code-string">"Mohamed TAMZIRT"</span>;
-    <span class="code-keyword">private</span> <span class="code-type">String</span> role = <span class="code-string">"Data Engineer"</span>;
-    <span class="code-keyword">private</span> <span class="code-type">String</span> school = <span class="code-string">"ENSA Al Hoceima"</span>;
-    <span class="code-keyword">private</span> <span class="code-type">List</span>&lt;<span class="code-type">String</span>&gt; skills = <span class="code-type">List</span>.of(
-        <span class="code-string">"Spark"</span>, <span class="code-string">"Kafka"</span>,
-        <span class="code-string">"ML"</span>, <span class="code-string">"Deep Learning"</span>
-    );
-
-    <span class="code-keyword">public</span> <span class="code-type">String</span> <span class="code-func">getPassion</span>() {
-        <span class="code-keyword">return</span> <span class="code-string">"Building data pipelines\n"</span>
-             + <span class="code-string">"that drive insights"</span>;
-    }
-}</code></pre>
+    <span class="code-keyword">def</span> <span class="code-func">build</span>(self):
+        <span class="code-keyword">return</span> <span class="code-string">"Scalable pipelines that</span>
+               <span class="code-string">drive real insights"</span></code></pre>
                         </div>
-                        <div class="card-status">
-                            <span class="status-dot"></span> Build Successful
-                        </div>
+                        <div class="card-status"><span class="status-dot"></span> Pipeline Running</div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <span>Scroll Down</span>
         </div>
     </section>
 
-    <!-- ==================== ABOUT ==================== -->
-    <section id="about" class="section about">
+    <!-- ABOUT -->
+    <section id="about" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">&lt;about&gt;</span>
-                <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
-                <p class="section-subtitle">Get to know who I am and what drives me</p>
+                <div class="section-label"><i class="fas fa-user"></i> About Me</div>
+                <h2 class="section-title">Get To Know <span class="text-gradient">Me</span></h2>
+                <p class="section-subtitle">A passionate engineer building the future with data and AI</p>
             </div>
             <div class="about-grid">
-                <div class="about-content" data-aos="fade-right">
-                    <h3>A passionate Data Engineering student</h3>
+                <div class="about-photo" data-aos="fade-right">
+                    <img src="assets/MyFace.jpg" alt="TAMZIRT Mohamed">
+                    <div class="about-photo-glow"></div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h3>Data Engineer & AI Developer</h3>
                     <p>
-                        Currently in my second year of the Data Engineering cycle at ENSA Al Hoceima, 
-                        I'm driven by a deep passion for data science and machine learning. My engineering 
-                        background has equipped me with a solid technical expertise covering the entire data 
-                        value chain — from ingestion to real-time analysis.
+                        Final-year Data Engineering student at ENSA Al Hoceima with a deep passion for building 
+                        scalable data pipelines and intelligent AI systems. My engineering background covers the 
+                        entire data value chain — from ingestion to real-time analysis.
                     </p>
                     <p>
-                        I master the fundamental tools of data science in Python (Scikit-learn, TensorFlow, 
-                        PyTorch, Pandas, NumPy) as well as Big Data technologies like Apache Spark, Kafka, 
-                        and Hadoop. My experience with relational databases (MySQL, PL/SQL) and NoSQL 
-                        (MongoDB, Cassandra) gives me a complete vision of data system architecture.
-                    </p>
-                    <p>
-                        I'm an active member of the Data & AI Club, the Moroccan Data Scientists community, 
-                        and I'm committed to continuous professional development through certifications and 
-                        real-world projects.
+                        I specialize in Big Data technologies (Spark, Kafka, Flink, Hadoop), AI frameworks 
+                        (TensorFlow, PyTorch, Hugging Face), and modern web development (React, Spring Boot, FastAPI). 
+                        Oracle Certified Professional in Java SE 17 and Cloud AI Foundations.
                     </p>
                     <div class="about-stats">
                         <div class="stat-card">
-                            <span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span>
-                            <span class="stat-label">Certifications</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number" data-count="8">0</span><span class="stat-plus">+</span>
+                            <span class="stat-number text-gradient" data-count="3">0</span><span class="stat-plus">+</span>
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-number" data-count="2">0</span>
-                            <span class="stat-label">Internships</span>
+                            <span class="stat-number text-gradient" data-count="4">0</span>
+                            <span class="stat-label">Certifications</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-number" data-count="4">0</span>
-                            <span class="stat-label">Languages</span>
+                            <span class="stat-number text-gradient" data-count="1">0</span>
+                            <span class="stat-label">Internship</span>
                         </div>
                     </div>
-                </div>
-                <div class="about-details" data-aos="fade-left">
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-user"></i></div>
-                        <div class="detail-info">
-                            <span class="detail-label">Name</span>
-                            <span class="detail-value">Mohamed TAMZIRT</span>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="detail-info">
-                            <span class="detail-label">Location</span>
-                            <span class="detail-value">Salé, Morocco</span>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="detail-info">
-                            <span class="detail-label">Email</span>
-                            <span class="detail-value">mohamedtamzirtai@gmail.com</span>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-phone"></i></div>
-                        <div class="detail-info">
-                            <span class="detail-label">Phone</span>
-                            <span class="detail-value">+212 654098473</span>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="detail-info">
-                            <span class="detail-label">Education</span>
-                            <span class="detail-value">ENSA Al Hoceima</span>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-language"></i></div>
-                        <div class="detail-info">
-                            <span class="detail-label">Languages</span>
-                            <span class="detail-value">Arabic, English, French, Spanish</span>
-                        </div>
-                    </div>
-                    <a href="assets/Mohamed_TAMZIRT_Resume.pdf" class="btn btn-primary btn-download" download>
-                        <i class="fas fa-download"></i>
-                        <span>Download Resume</span>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== EXPERIENCE ==================== -->
-    <section id="experience" class="section experience">
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">&lt;experience&gt;</span>
+                <div class="section-label"><i class="fas fa-code"></i> Projects</div>
+                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                <p class="section-subtitle">A selection of projects showcasing my data engineering and AI expertise</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Job Intelligent</h3>
+                        <span class="project-date">February 2026</span>
+                        <p>End-to-end candidate-job matching engine with Apache Airflow orchestrating job scraping from LinkedIn, Indeed, Google Jobs via Scrapy. AI resume parsing with Gemini 1.5 Flash, semantic matching using BERT embeddings + FAISS.</p>
+                        <div class="project-tech">
+                            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Airflow</span>
+                            <span class="tag">Scrapy</span><span class="tag">BERT</span><span class="tag">FAISS</span>
+                            <span class="tag">React</span><span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-taxi"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>TaaSim: Urban Mobility Platform</h3>
+                        <span class="project-date">February 2026</span>
+                        <p>Real-time Kappa Architecture processing 1.7M+ taxi trajectories. Spark ETL + GBT demand forecasting, Kafka event messaging + Flink real-time processing. Sub-5s trip-matching, &lt;500ms forecast API.</p>
+                        <div class="project-tech">
+                            <span class="tag">Spark</span><span class="tag">Kafka</span><span class="tag">Flink</span>
+                            <span class="tag">Python</span><span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-comments"></i></div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Collaborative NLP Annotation Platform</h3>
+                        <span class="project-date">May 2026</span>
+                        <p>Spring Boot (Java 17) + MariaDB platform with role-based access control, Chart.js analytics dashboard, and ML pipeline with Hugging Face Transformers for text classification.</p>
+                        <div class="project-tech">
+                            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">MariaDB</span>
+                            <span class="tag">Hugging Face</span><span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label"><i class="fas fa-building"></i> Experience</div>
                 <h2 class="section-title">Professional <span class="text-gradient">Experience</span></h2>
-                <p class="section-subtitle">My professional journey and contributions</p>
+                <p class="section-subtitle">Real-world industry experience building impactful solutions</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Software Development Intern</h3>
-                                <span class="timeline-company">
-                                    <i class="fas fa-building"></i> OCP Group — Supply Chain Division
-                                </span>
-                            </div>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> July 2025 — Aug 2025
-                            </span>
-                        </div>
-                        <ul class="timeline-details">
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                Designed and implemented a comprehensive web-based Industrial Maintenance Management System (IMMS) using 
-                                the Laravel framework (PHP) and MySQL.
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                Developed a centralized platform to manage industrial equipment, track breakdowns, 
-                                and oversee work orders and spare parts inventory.
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                Improved operational efficiency by providing full activity traceability and 
-                                decision-support tools for the Methods Office.
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                Applied full-stack development, relational database design, and OOP principles 
-                                to optimize maintenance workflows in an industrial context.
-                            </li>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>AI-Powered Maintenance & Inventory Web App</h3>
+                        <span class="timeline-company"><i class="fas fa-building"></i> OCP Group — Digital Supply Chain Division</span>
+                        <span class="timeline-date"><i class="fas fa-calendar-alt"></i> July – August 2025</span>
+                        <ul>
+                            <li>Designed and developed a full-stack AI-powered maintenance management system using Laravel (PHP) and MySQL</li>
+                            <li>Integrated Google Gemini LLM with RAG architecture for intelligent chatbot assistance</li>
+                            <li>Built centralized platform managing industrial equipment, breakdowns, work orders, and spare parts inventory</li>
+                            <li>Improved operational efficiency with full traceability and decision-support tools</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span class="tag">Laravel</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Full-Stack</span>
-                            <span class="tag">OOP</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Remote Data Scientist Intern</h3>
-                                <span class="timeline-company">
-                                    <i class="fas fa-building"></i> CodSoft
-                                </span>
-                            </div>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Oct 2024
-                            </span>
-                        </div>
-                        <ul class="timeline-details">
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                Worked on predictive modeling projects applying machine learning techniques.
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                Consolidated data science competencies through hands-on project work.
-                            </li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Data Science</span>
-                            <span class="tag">Predictive Modeling</span>
+                            <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+                            <span class="tag">Gemini LLM</span><span class="tag">RAG</span>
                         </div>
                     </div>
                 </div>
@@ -341,557 +256,147 @@
         </div>
     </section>
 
-    <!-- ==================== PROJECTS ==================== -->
-    <section id="projects" class="section projects">
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">&lt;projects&gt;</span>
-                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
-                <p class="section-subtitle">A selection of projects I've built and contributed to</p>
+                <div class="section-label"><i class="fas fa-certificate"></i> Certifications</div>
+                <h2 class="section-title">Professional <span class="text-gradient">Certifications</span></h2>
+                <p class="section-subtitle">Industry-recognized credentials validating my expertise</p>
             </div>
-            <div class="projects-filter" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="data">Data & ML</button>
-                <button class="filter-btn" data-filter="web">Web Dev</button>
-                <button class="filter-btn" data-filter="ai">AI & NLP</button>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1: IT-Pulse RAG -->
-                <div class="project-card" data-category="ai" data-aos="fade-up">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
+            <div class="certs-grid">
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-icon oracle"><i class="fab fa-java"></i></div>
+                    <div>
+                        <h4>Oracle Certified Professional</h4>
+                        <p>Java SE 17 Developer</p>
                     </div>
-                    <div class="project-info">
-                        <div class="project-category">AI & NLP</div>
-                        <h3 class="project-title">IT-Pulse RAG Chatbot</h3>
-                        <p class="project-description">
-                            A real-time streaming chatbot leveraging LLMs and RAG (Retrieval-Augmented Generation) 
-                            for intelligent knowledge retrieval. Built as a pair project with streaming capabilities.
-                        </p>
-                        <div class="project-tech">
-                            <span>LLMs</span>
-                            <span>RAG</span>
-                            <span>ChromaDB</span>
-                            <span>Python</span>
-                            <span>Streaming</span>
-                        </div>
-                    </div>
+                    <span class="cert-badge oracle-badge">Oracle</span>
                 </div>
-
-                <!-- Project 2: AI Language Agent -->
-                <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cert-icon oracle"><i class="fas fa-cloud"></i></div>
+                    <div>
+                        <h4>Oracle Cloud Infrastructure 2025</h4>
+                        <p>AI Foundations Associate</p>
                     </div>
-                    <div class="project-info">
-                        <div class="project-category">AI & NLP</div>
-                        <h3 class="project-title">AI Language Learning Agent</h3>
-                        <p class="project-description">
-                            An intelligent AI agent on n8n for language learning recommendation, 
-                            featuring a smart workflow that suggests tailored learning resources based on user profiles.
-                        </p>
-                        <div class="project-tech">
-                            <span>n8n</span>
-                            <span>AI Agents</span>
-                            <span>LLMs</span>
-                            <span>Workflow</span>
-                        </div>
-                    </div>
+                    <span class="cert-badge oracle-badge">Oracle</span>
                 </div>
-
-                <!-- Project 3: Big Data Pipeline -->
-                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-icon ds"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h4>Deep Learning with TensorFlow 2</h4>
+                        <p>365 Data Science</p>
                     </div>
-                    <div class="project-info">
-                        <div class="project-category">Data & ML</div>
-                        <h3 class="project-title">Big Data Procurement Pipeline</h3>
-                        <p class="project-description">
-                            Created a comprehensive big data pipeline for a procurement system 
-                            as part of a data engineering project, handling large-scale data processing and analytics.
-                        </p>
-                        <div class="project-tech">
-                            <span>Big Data</span>
-                            <span>Apache Spark</span>
-                            <span>Pipeline</span>
-                            <span>ETL</span>
-                        </div>
-                    </div>
+                    <span class="cert-badge ds-badge">365DS</span>
                 </div>
-
-                <!-- Project 4: Predictive ML Model -->
-                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="cert-icon ds"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>LLM Engineering with Streamlit & OpenAI</h4>
+                        <p>365 Data Science</p>
                     </div>
-                    <div class="project-info">
-                        <div class="project-category">Data & ML</div>
-                        <h3 class="project-title">Kaggle Predictive ML Model</h3>
-                        <p class="project-description">
-                            Built a predictive machine learning model using large-scale datasets from Kaggle, 
-                            applying advanced ML techniques for accurate predictions.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Scikit-learn</span>
-                            <span>Pandas</span>
-                            <span>Kaggle</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: University Platform -->
-                <div class="project-card" data-category="web" data-aos="fade-up">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Web Dev</div>
-                        <h3 class="project-title">Distributed University Platform</h3>
-                        <p class="project-description">
-                            Designed and developed a distributed university management platform 
-                            powered by MongoDB, enabling efficient academic resource management at scale.
-                        </p>
-                        <div class="project-tech">
-                            <span>MongoDB</span>
-                            <span>Distributed Systems</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Maintenance & Inventory App -->
-                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Web Dev</div>
-                        <h3 class="project-title">Maintenance & Inventory Manager</h3>
-                        <p class="project-description">
-                            A full-featured web application for maintenance management and inventory tracking, 
-                            providing streamlined workflows for industrial operations.
-                        </p>
-                        <div class="project-tech">
-                            <span>Web App</span>
-                            <span>Full-Stack</span>
-                            <span>Database</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: eBay ETL Pipeline -->
-                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-exchange-alt"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Data & ML</div>
-                        <h3 class="project-title">eBay ETL Pipeline</h3>
-                        <p class="project-description">
-                            An end-to-end ETL (Extract, Transform, Load) pipeline for processing eBay data, 
-                            enabling automated data collection and transformation workflows.
-                        </p>
-                        <div class="project-tech">
-                            <span>ETL</span>
-                            <span>Python</span>
-                            <span>Airflow</span>
-                            <span>Data Pipeline</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8: Medical Stats App -->
-                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Source code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Web Dev</div>
-                        <h3 class="project-title">Medical Statistics App</h3>
-                        <p class="project-description">
-                            A disease-management and medical-statistics application built with Python (Tkinter) 
-                            and PHP, providing healthcare data analysis and visualization.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Tkinter</span>
-                            <span>PHP</span>
-                            <span>Statistics</span>
-                        </div>
-                    </div>
+                    <span class="cert-badge ds-badge">365DS</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SKILLS ==================== -->
-    <section id="skills" class="section skills">
+    <!-- SKILLS -->
+    <section id="skills" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">&lt;skills&gt;</span>
+                <div class="section-label"><i class="fas fa-cogs"></i> Skills</div>
                 <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
-                <p class="section-subtitle">Technologies and tools I work with</p>
+                <p class="section-subtitle">Technologies and tools I work with every day</p>
             </div>
             <div class="skills-grid">
-                <!-- Big Data & Databases -->
                 <div class="skill-category" data-aos="fade-up">
                     <div class="skill-category-header">
                         <div class="skill-icon"><i class="fas fa-server"></i></div>
                         <h3>Big Data & Databases</h3>
                     </div>
                     <div class="skill-tags">
-                        <div class="skill-tag">
-                            <i class="fas fa-bolt"></i>
-                            <span>Apache Spark</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-stream"></i>
-                            <span>Kafka</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-elephant"></i>
-                            <span>Hadoop</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-leaf"></i>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-database"></i>
-                            <span>Cassandra</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-code"></i>
-                            <span>PL/SQL</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Database Design (Merise)</span>
-                        </div>
+                        <span class="skill-tag"><i class="fas fa-bolt"></i> Spark</span>
+                        <span class="skill-tag"><i class="fas fa-water"></i> Flink</span>
+                        <span class="skill-tag"><i class="fas fa-mountain"></i> Hadoop</span>
+                        <span class="skill-tag"><i class="fas fa-stream"></i> Kafka</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> MariaDB</span>
+                        <span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> Cassandra</span>
                     </div>
                 </div>
-
-                <!-- Programming -->
                 <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-category-header">
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        <h3>Programming</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-tag">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-leaf"></i>
-                            <span>Spring & Spring Boot</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-php"></i>
-                            <span>PHP</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-copyright"></i>
-                            <span>C</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-sitemap"></i>
-                            <span>Data Structures & Algorithms</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI & Data Science -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-category-header">
                         <div class="skill-icon"><i class="fas fa-brain"></i></div>
                         <h3>AI & Data Science</h3>
                     </div>
                     <div class="skill-tags">
-                        <div class="skill-tag">
-                            <i class="fas fa-cogs"></i>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-network-wired"></i>
-                            <span>Deep Learning</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-brain"></i>
-                            <span>TensorFlow & PyTorch</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-comments"></i>
-                            <span>NLP</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-search"></i>
-                            <span>RAG</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-robot"></i>
-                            <span>LLMs & AI Agents</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Pandas & NumPy</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-cloud"></i>
-                            <span>Cloud Computing</span>
-                        </div>
+                        <span class="skill-tag"><i class="fas fa-cogs"></i> Machine Learning</span>
+                        <span class="skill-tag"><i class="fas fa-network-wired"></i> Deep Learning</span>
+                        <span class="skill-tag"><i class="fas fa-brain"></i> TensorFlow</span>
+                        <span class="skill-tag"><i class="fas fa-fire"></i> PyTorch</span>
+                        <span class="skill-tag"><i class="fas fa-smile"></i> Hugging Face</span>
+                        <span class="skill-tag"><i class="fas fa-search"></i> FAISS</span>
+                        <span class="skill-tag"><i class="fas fa-comments"></i> NLP</span>
+                        <span class="skill-tag"><i class="fas fa-robot"></i> RAG & LLMs</span>
+                        <span class="skill-tag"><i class="fas fa-chart-bar"></i> Pandas</span>
+                        <span class="skill-tag"><i class="fas fa-calculator"></i> NumPy</span>
+                        <span class="skill-tag"><i class="fas fa-spider"></i> Scrapy</span>
                     </div>
                 </div>
-
-                <!-- Tools & OS -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Programming & Web</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fab fa-java"></i> Java (Spring Boot)</span>
+                        <span class="skill-tag"><i class="fab fa-php"></i> PHP (Laravel)</span>
+                        <span class="skill-tag"><i class="fas fa-copyright"></i> C</span>
+                        <span class="skill-tag"><i class="fas fa-bolt"></i> FastAPI</span>
+                        <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> Tailwind CSS</span>
+                    </div>
+                </div>
                 <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
                     <div class="skill-category-header">
                         <div class="skill-icon"><i class="fas fa-tools"></i></div>
-                        <h3>Tools & DevOps</h3>
+                        <h3>DevOps & Tools</h3>
                     </div>
                     <div class="skill-tags">
-                        <div class="skill-tag">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git & GitHub</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>n8n</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-wind"></i>
-                            <span>Airflow</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-linux"></i>
-                            <span>Linux</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-tasks"></i>
-                            <span>Scrum</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-drafting-compass"></i>
-                            <span>UML</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-calculator"></i>
-                            <span>MATLAB</span>
-                        </div>
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="fas fa-wind"></i> Airflow</span>
+                        <span class="skill-tag"><i class="fas fa-project-diagram"></i> n8n</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-tag"><i class="fas fa-tasks"></i> Scrum</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== EDUCATION ==================== -->
-    <section id="education" class="section education">
+    <!-- CONTACT -->
+    <section id="contact" class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">&lt;education&gt;</span>
-                <h2 class="section-title">Education & <span class="text-gradient">Certifications</span></h2>
-                <p class="section-subtitle">My academic journey and professional certifications</p>
-            </div>
-            <div class="education-grid">
-                <div class="education-column" data-aos="fade-right">
-                    <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="edu-card">
-                        <div class="edu-year">2024 — 2027</div>
-                        <h4>Data Engineering Cycle</h4>
-                        <p class="edu-school"><i class="fas fa-university"></i> ENSA Al Hoceima (ENSAH)</p>
-                        <p class="edu-description">Engineering cycle specializing in Data Engineering, covering Big Data, Machine Learning, Software Development, and Database Systems.</p>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-year">2022 — 2024</div>
-                        <h4>Integrated Preparatory Classes</h4>
-                        <p class="edu-school"><i class="fas fa-university"></i> ENSAH</p>
-                        <p class="edu-description">Two-year intensive preparatory program in mathematics, physics, and computer science fundamentals.</p>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-year">2021 — 2022</div>
-                        <h4>Baccalaureate in Physical Sciences</h4>
-                        <p class="edu-school"><i class="fas fa-school"></i> High School</p>
-                        <p class="edu-description">Scientific baccalaureate with a focus on physical sciences.</p>
-                    </div>
-                </div>
-                <div class="education-column" data-aos="fade-left">
-                    <h3 class="column-title"><i class="fas fa-certificate"></i> Certifications</h3>
-                    <div class="cert-card">
-                        <div class="cert-icon"><i class="fab fa-java"></i></div>
-                        <div class="cert-info">
-                            <h4>Oracle Certified Professional</h4>
-                            <p>Java SE 17 Developer</p>
-                        </div>
-                        <div class="cert-badge">Oracle</div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-cloud"></i></div>
-                        <div class="cert-info">
-                            <h4>Oracle Cloud Infrastructure 2025</h4>
-                            <p>Certified AI Foundations Associate</p>
-                        </div>
-                        <div class="cert-badge">Oracle</div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-database"></i></div>
-                        <div class="cert-info">
-                            <h4>Oracle Cloud Database Services 2025</h4>
-                            <p>Certified Professional</p>
-                        </div>
-                        <div class="cert-badge">Oracle</div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon"><i class="fas fa-brain"></i></div>
-                        <div class="cert-info">
-                            <h4>Deep Learning with TensorFlow 2</h4>
-                            <p>365 Data Science</p>
-                        </div>
-                        <div class="cert-badge">365DS</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACT ==================== -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">&lt;contact&gt;</span>
+                <div class="section-label"><i class="fas fa-paper-plane"></i> Contact</div>
                 <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
-                <p class="section-subtitle">Have a project in mind or want to collaborate? Let's connect!</p>
+                <p class="section-subtitle">Have a project in mind? Let's build something amazing together.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info" data-aos="fade-right">
                     <h3>Let's work together</h3>
-                    <p>
-                        I'm always open to discussing new opportunities, internships, or interesting projects. 
-                        Whether you need a data engineering solution, want to collaborate on an ML project, 
-                        or just want to say hello — feel free to reach out!
-                    </p>
+                    <p>I'm always open to discussing data engineering opportunities, AI collaborations, or interesting projects. Feel free to reach out!</p>
                     <div class="contact-cards">
                         <div class="contact-card">
                             <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
                             <div class="contact-card-info">
                                 <span class="contact-card-label">Email</span>
                                 <a href="mailto:mohamedtamzirtai@gmail.com">mohamedtamzirtai@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
-                            <div class="contact-card-info">
-                                <span class="contact-card-label">Phone</span>
-                                <a href="tel:+212654098473">+212 654098473</a>
                             </div>
                         </div>
                         <div class="contact-card">
@@ -903,38 +408,24 @@
                         </div>
                     </div>
                     <div class="contact-socials">
-                        <a href="https://github.com/TAMZIRT-MOHAMED" target="_blank" rel="noopener" class="contact-social" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/mohamed-tamzirt-740953252/" target="_blank" rel="noopener" class="contact-social" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:mohamedtamzirtai@gmail.com" class="contact-social" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                        <a href="https://github.com/TAMZIRT-MOHAMED" target="_blank" rel="noopener" class="contact-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mohamed-tamzirt-740953252/" target="_blank" rel="noopener" class="contact-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:mohamedtamzirtai@gmail.com" class="contact-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper" data-aos="fade-left">
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="enter your name" required>
-                            <span class="form-line"></span>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="your_mail@example.com" required>
-                            <span class="form-line"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required>
-                            <span class="form-line"></span>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                            <span class="form-line"></span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-submit">
                             <span>Send Message</span>
@@ -946,17 +437,17 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <p>Data Engineering Student crafting data-driven solutions.</p>
+                    <p>Data Engineer & AI Developer crafting data-driven solutions.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
                     <a href="#skills">Skills</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -967,13 +458,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Mohamed TAMZIRT. All rights reserved.</p>
-                <p>Designed & Built with <span class="heart">&hearts;</span> by Mohamed TAMZIRT</p>
+                <p>&copy; 2026 TAMZIRT Mohamed. All rights reserved. Designed & Built with <span class="heart">&hearts;</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== BACK TO TOP ==================== -->
+    <!-- BACK TO TOP -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>

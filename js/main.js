@@ -1,50 +1,47 @@
+// ===== DOM Elements =====
 const loader = document.getElementById('loader');
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-const themeToggle = document.getElementById('theme-toggle');
 const backToTop = document.getElementById('back-to-top');
-const cursorDot = document.getElementById('cursor-dot');
-const cursorOutline = document.getElementById('cursor-outline');
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
 const contactForm = document.getElementById('contact-form');
-const heroCard = document.querySelector('.hero-card');
+const heroCard = document.getElementById('hero-card');
+const canvas = document.getElementById('particles-canvas');
 
 let countersStarted = false;
 
+// ===== Loader =====
 window.addEventListener('load', () => {
     setTimeout(() => {
         loader.classList.add('hidden');
         document.body.style.overflow = 'auto';
         initAOS();
-    }, 650);
+    }, 600);
 });
 
-if (window.innerWidth > 860 && cursorDot && cursorOutline) {
-    window.addEventListener('mousemove', (event) => {
-        const { clientX, clientY } = event;
-        cursorDot.style.left = `${clientX}px`;
-        cursorDot.style.top = `${clientY}px`;
-        cursorOutline.style.left = `${clientX}px`;
-        cursorOutline.style.top = `${clientY}px`;
-        cursorDot.style.opacity = '1';
-        cursorOutline.style.opacity = '1';
-    });
+// ===== Navbar Scroll =====
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 30);
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+    updateActiveNav();
+});
 
-    document.querySelectorAll('a, button, .project-card, .skill-tag, .detail-card, .cert-card, .contact-card').forEach((el) => {
-        el.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
+function updateActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const offset = window.scrollY + 150;
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (offset >= top && offset < top + height) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+        }
     });
 }
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    navbar.classList.toggle('scrolled', currentScroll > 20);
-    backToTop.classList.toggle('visible', currentScroll > 320);
-    updateActiveNavLink();
-});
-
+// ===== Hamburger =====
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
@@ -53,7 +50,7 @@ if (hamburger) {
     });
 }
 
-document.querySelectorAll('.nav-link').forEach((link) => {
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('open');
@@ -61,241 +58,186 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     });
 });
 
-document.addEventListener('click', (event) => {
-    if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+document.addEventListener('click', e => {
+    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('open');
         document.body.style.overflow = 'auto';
     }
 });
 
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const offset = window.scrollY + 140;
+window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+});
 
-    sections.forEach((section) => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-
-        if (offset >= top && offset < top + height) {
-            document.querySelectorAll('.nav-link').forEach((link) => {
-                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-            });
-        }
-    });
-}
-
+// ===== Back to Top =====
 backToTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-const savedTheme = localStorage.getItem('theme') || 'dark';
-document.documentElement.setAttribute('data-theme', savedTheme);
-
-themeToggle?.addEventListener('click', () => {
-    const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('theme', nextTheme);
-});
-
-const typewriterText = document.getElementById('typewriter');
-const phrases = [
-    'Data Engineering Student',
-    'Machine Learning Enthusiast',
-    'Big Data Developer',
-    'Java & Spring Learner',
-    'AI and NLP Explorer'
-];
-
-let phraseIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function runTypewriter() {
-    if (!typewriterText) return;
-
-    const phrase = phrases[phraseIndex];
-    typewriterText.textContent = deleting
-        ? phrase.slice(0, --charIndex)
-        : phrase.slice(0, ++charIndex);
-
-    let nextTick = deleting ? 38 : 72;
-
-    if (!deleting && charIndex === phrase.length) {
-        deleting = true;
-        nextTick = 1300;
-    }
-
-    if (deleting && charIndex === 0) {
-        deleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        nextTick = 360;
-    }
-
-    setTimeout(runTypewriter, nextTick);
-}
-
-runTypewriter();
-
-filterBtns.forEach((button) => {
-    button.addEventListener('click', () => {
-        filterBtns.forEach((item) => item.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-
-        projectCards.forEach((card, index) => {
-            const show = filter === 'all' || card.dataset.category === filter;
-            card.classList.toggle('hidden', !show);
-            if (show) {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(12px)';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 45);
-            }
-        });
+// ===== Smooth Scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
+// ===== Typewriter =====
+const typewriterEl = document.getElementById('typewriter');
+const phrases = [
+    'Data Engineer & AI Developer',
+    'Machine Learning Engineer',
+    'Big Data Pipeline Architect',
+    'Full-Stack Developer',
+    'Cloud & DevOps Enthusiast'
+];
+let phraseIdx = 0, charIdx = 0, deleting = false;
+
+function runTypewriter() {
+    if (!typewriterEl) return;
+    const phrase = phrases[phraseIdx];
+    typewriterEl.textContent = deleting ? phrase.slice(0, --charIdx) : phrase.slice(0, ++charIdx);
+    let delay = deleting ? 35 : 65;
+    if (!deleting && charIdx === phrase.length) { deleting = true; delay = 1500; }
+    if (deleting && charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; delay = 400; }
+    setTimeout(runTypewriter, delay);
+}
+runTypewriter();
+
+// ===== Stat Counters =====
 function animateCounters() {
     if (countersStarted) return;
     countersStarted = true;
-
-    document.querySelectorAll('.stat-number').forEach((counter) => {
+    document.querySelectorAll('.stat-number').forEach(counter => {
         const target = Number(counter.dataset.count || 0);
         const start = performance.now();
-        const duration = 1400;
-
-        const step = (timestamp) => {
-            const progress = Math.min((timestamp - start) / duration, 1);
+        const duration = 1200;
+        const step = ts => {
+            const progress = Math.min((ts - start) / duration, 1);
             counter.textContent = String(Math.floor(progress * target));
             if (progress < 1) requestAnimationFrame(step);
         };
-
         requestAnimationFrame(step);
     });
 }
 
+// ===== Scroll Animations (AOS) =====
 function initAOS() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             const delay = Number(entry.target.dataset.aosDelay || 0);
-            setTimeout(() => {
-                entry.target.classList.add('aos-animate');
-            }, delay);
-
+            setTimeout(() => entry.target.classList.add('aos-animate'), delay);
             if (entry.target.id === 'about' || entry.target.closest('#about')) {
                 animateCounters();
             }
             observer.unobserve(entry.target);
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('[data-aos], section').forEach((item) => observer.observe(item));
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-aos], section').forEach(el => observer.observe(el));
 }
 
-contactForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const submitButton = contactForm.querySelector('.btn-submit');
-    const original = submitButton.innerHTML;
+// ===== Hero Card 3D Tilt =====
+if (heroCard && window.innerWidth > 1024) {
+    heroCard.addEventListener('mousemove', e => {
+        const rect = heroCard.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        heroCard.style.transform = `perspective(800px) rotateX(${(0.5 - y) * 12}deg) rotateY(${(x - 0.5) * 12}deg)`;
+    });
+    heroCard.addEventListener('mouseleave', () => {
+        heroCard.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+    });
+}
 
+// ===== Contact Form =====
+contactForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.btn-submit');
+    const original = btn.innerHTML;
     const name = contactForm.querySelector('#name').value;
     const email = contactForm.querySelector('#email').value;
-    const subject = contactForm.querySelector('#subject').value;
     const message = contactForm.querySelector('#message').value;
-
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const link = `mailto:mohamedtamzirtai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    submitButton.innerHTML = '<span>Preparing email...</span><i class="fas fa-spinner fa-spin"></i>';
-    submitButton.disabled = true;
-
+    const link = `mailto:mohamedtamzirtai@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`;
+    btn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+    btn.disabled = true;
     setTimeout(() => {
         window.location.href = link;
-        submitButton.innerHTML = '<span>Done!</span><i class="fas fa-check"></i>';
-
-        setTimeout(() => {
-            submitButton.innerHTML = original;
-            submitButton.disabled = false;
-            contactForm.reset();
-        }, 1200);
-    }, 450);
+        btn.innerHTML = '<span>Done!</span><i class="fas fa-check"></i>';
+        setTimeout(() => { btn.innerHTML = original; btn.disabled = false; contactForm.reset(); }, 1200);
+    }, 400);
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (event) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-});
-
-window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && navMenu.classList.contains('open')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('open');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-if (heroCard && window.innerWidth > 860) {
-    heroCard.addEventListener('mousemove', (event) => {
-        const rect = heroCard.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
-        const rotateY = (x - 0.5) * 10;
-        const rotateX = (0.5 - y) * 10;
-        heroCard.style.transform = `perspective(850px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    heroCard.addEventListener('mouseleave', () => {
-        heroCard.style.transform = 'perspective(850px) rotateX(0deg) rotateY(0deg)';
-    });
-}
-
-function addParticles() {
-    const bg = document.querySelector('.hero-bg-effects');
-    if (!bg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    for (let index = 0; index < 16; index += 1) {
-        const particle = document.createElement('span');
-        particle.className = 'particle';
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
-        particle.style.animationDelay = `${Math.random() * 5}s`;
-        particle.style.animationDuration = `${6 + Math.random() * 7}s`;
-        bg.appendChild(particle);
-    }
-}
-
-function setupCopyCode() {
-    const action = document.querySelector('.card-action');
-    const code = document.querySelector('.code-lines code');
-    if (!action || !code || !navigator.clipboard) return;
-
-    action.addEventListener('click', async () => {
+// ===== Copy Code Button =====
+const copyBtn = document.querySelector('.card-action');
+const codeBlock = document.querySelector('.code-lines code');
+if (copyBtn && codeBlock && navigator.clipboard) {
+    copyBtn.addEventListener('click', async () => {
         try {
-            await navigator.clipboard.writeText(code.innerText);
-            action.innerHTML = '<i class="fas fa-check"></i>';
-            setTimeout(() => {
-                action.innerHTML = '<i class="fas fa-copy"></i>';
-            }, 1000);
-        } catch (_) {
-            action.innerHTML = '<i class="fas fa-times"></i>';
-            setTimeout(() => {
-                action.innerHTML = '<i class="fas fa-copy"></i>';
-            }, 1000);
-        }
+            await navigator.clipboard.writeText(codeBlock.innerText);
+            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+        } catch { copyBtn.innerHTML = '<i class="fas fa-times"></i>'; }
+        setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-copy"></i>'; }, 1000);
     });
 }
 
-addParticles();
-setupCopyCode();
+// ===== Particle Background =====
+function initParticles() {
+    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, particles = [];
+    function resize() {
+        w = canvas.width = canvas.parentElement.offsetWidth;
+        h = canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    const count = Math.min(60, Math.floor(w * h / 15000));
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * w, y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+            r: Math.random() * 1.5 + 0.5, o: Math.random() * 0.4 + 0.1
+        });
+    }
+    function draw() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach((p, i) => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
+            if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(13,148,136,${p.o})`;
+            ctx.fill();
+            // Connect nearby particles
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = p.x - particles[j].x, dy = p.y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(13,148,136,${0.08 * (1 - dist / 120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
+initParticles();
 
+// ===== Reduced Motion =====
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('[data-aos]').forEach((item) => item.classList.add('aos-animate'));
+    document.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
 }

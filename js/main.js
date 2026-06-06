@@ -91,7 +91,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===== Typewriter =====
 const typewriterEl = document.getElementById('typewriter');
-const phrases = [
+const isFrench = document.documentElement.lang === 'fr';
+const phrases = isFrench ? [
+    'Ingénieur Données & Développeur IA',
+    'Ingénieur Machine Learning',
+    'Architecte de Pipelines Big Data',
+    'Développeur Full-Stack',
+    'Passionné par le Cloud & DevOps'
+] : [
     'Data Engineer & AI Developer',
     'Machine Learning Engineer',
     'Big Data Pipeline Architect',
